@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Countdown Timer</h1>
+
+    <section class="setup" id="setup">
+      <div class="mode">
+        <label><input type="radio" name="mode" value="date" checked> Target date &amp; time</label>
+        <label><input type="radio" name="mode" value="duration"> Duration</label>
+      </div>
+
+      <div id="date-input" class="field">
+        <input type="datetime-local" id="target" aria-label="Target date and time">
+      </div>
+
+      <div id="duration-input" class="field hidden">
+        <input type="number" id="hours" min="0" value="0" aria-label="Hours"> <span>h</span>
+        <input type="number" id="minutes" min="0" max="59" value="5" aria-label="Minutes"> <span>m</span>
+        <input type="number" id="seconds" min="0" max="59" value="0" aria-label="Seconds"> <span>s</span>
+      </div>
+
+      <p class="error" id="error" role="alert"></p>
+    </section>
+
+    <div class="display" id="display" aria-live="polite">00:00:00</div>
+    <p class="status" id="status">Set a time to begin.</p>
+
+    <div class="controls">
+      <button id="start" type="button">Start</button>
+      <button id="pause" type="button" disabled>Pause</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
